@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=1">
+    
+    <link rel="stylesheet" href="css/product.css">
+
+    <script src="https://kit.fontawesome.com/b7942be068.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+
+   <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+
+   <title>Admin order</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="navbar u-cf">
+            <div class="shoptime title">Shoptime</div>
+            <ul class="menu sub2">
+                <li><a href="./home.html">HOME</a></li>
+                <li><a href="./orders.html">ORDERS</a></li>
+                <li><a  class="current" href="./product.html">PRODUCT</a></li>
+            </ul>
+            <div class="admin sub2">ADMIN</div>
+        </header>
+    </div>
+
+    <div class="main">
+        <div x-data="datatables()">
+            <div class="mb-4 flex">
+                <div class="flex-1 pr-4">
+                    <label>
+                        <input type="checkbox" class="form-checkbox" @click="selectAllCheckbox($event);">
+                    </label>
+                </div>
+                <div>
+                    <div class="flex">
+                        <div class="editsection table">
+                            
+                            <button  @click.prevent="open = !open" class="edit">
+
+                                <span>ADD NEW PRODUCT</span>
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div x-show="open" @click.away="open = false" class="editin">
+                <div class="editinadd title">ADD NEW PRODUCT</div>
+                <div class="uploadbottom">
+                    <div class="uploadleft">
+                        <div class="upload">
+                            <input type="file" id="file-uploader" data-target="file-uploader"
+                            accept="image/*" multiple="multiple" />
+                        </div>
+                        <div id="file-imgs" ></div>
+                    </div>
+                    <div class="uploadright sub2">
+                        <div class="productdiscription">Product Discription</div>
+                        <div class="productinput">
+                            <input class="uploadtitle" type="text" placeholder="Title">
+                            <input class="uploaddiscription" type="text" placeholder="Discription">
+    
+                        </div>
+                        
+                        <div class="price">Price</div>
+                        <div class="priceline">
+                            <div class="priceoriginal">
+                                <div class="priceori">Original</div>
+                                <input class="originalinput" type="text" placeholder="$3,200">
+                            </div>
+                            <div class="discountoriginal">
+                                <div class="pricediscount">Discount</div>
+                                <input class="discountinput" type="text" placeholder="$2,800">
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                
+                
+
+            </div>
+    
+            <div class="overflow">
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                
+                            </th>
+                            <template x-for="heading in headings">
+                                <th class=" border-b border-gray-200 px-6 py-2 text-gray-600 font-bold tracking-wider uppercase text-xs"
+                                    x-text="heading.value" :x-ref="heading.key" :class="{ [heading.key]: true }">
+                                </th>
+                            </template>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template x-for="user in users" :key="user.product">
+                            <tr>
+                                <td class="checktd">
+                                    <label>
+                                        <input type="checkbox" class="form-checkbox rowCheckbox " :name="user.userId"
+                                                @click="getRowDetail($event, user.product)">
+                                    </label>
+                                </td>
+                                <td class="product">
+                                    <span x-text="user.product" ></span>
+                                </td>
+                                <td class="original">
+                                    <span x-text="user.original"></span>
+                                </td>
+                                <td class="discount">
+                                    <span x-text="user.discount"></span>
+                                </td>
+                                <td class="size">
+                                    <span x-text="user.size"></span>
+                                </td>
+                                <td class="color">
+                                    <span x-text="user.color"></span>
+                                </td>
+                                <td class="inventory">
+                                    <span x-text="user.inventory"></span>
+                                </td>
+                                <td class="status">
+                                    <span x-text="user.status"></span>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+   
+</body>
+<script src="./js/product.js"> </script>
+
+</html>

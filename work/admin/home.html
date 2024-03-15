@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=1">
+    <link rel="stylesheet" href="css/home.css">
+   
+   <title>Admin order</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="navbar u-cf">
+            <div class="shoptime title">Shoptime</div>
+            <ul class="menu sub2">
+                <li><a class="current" href="./home.html">HOME</a></li>
+                <li><a href="./orders.html">ORDERS</a></li>
+                <li><a href="./product.html">PRODUCT</a></li>
+            </ul>
+            <div class="admin sub2">ADMIN</div>
+        </header>
+    </div>
+
+    <div class="main">
+        <div class="overview">
+            <div class="overviewtitle title">OVERVIEW</div>
+            <div class="overviewcol">
+                <div class="revenue sub2">
+                    <div class="totalrevenue">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>TOTAL REVENUE
+                    </div>
+                    <div class="revenueamount" id="revenueamount"></div>
+                </div>
+                <div class="cost sub2">
+                    <div class="totalcost">
+                        <i class="fa-solid fa-boxes-stacked"></i>TOTAL COST
+                    </div>
+                    <div class="costamount" id="costamount"></div>
+                </div>
+                <div class="income sub2">
+                    <div class="netincome">
+                        <i class="fa-solid fa-money-bill"></i>NET INCOME
+                    </div>
+                    <div class="incomeamount" id="incomeamount"></div>
+                </div>
+            </div>
+            
+        </div>
+
+
+
+        <div class="activity">
+            <div class="activitytitle title">Activity</div>
+            <div class="chart">
+                <canvas id="myChart"></canvas>
+            </div>
+            
+
+        </div>
+        
+
+        <div class="transaction">
+            <div class="transactionwebsite title">
+                Transaction Website
+                <div class="fb">
+                    <i class="fbicon fa-brands fa-square-facebook"></i>
+                    <div class="fbtext sub2">Facebook.com</div>
+                    <div class="fbamount sub">45,836</div>
+                    <div class="arrowgreen"><i class="fa-solid fa-arrow-up"></i></div>
+                    
+                    <div class="percentagegreen sub">20%
+                        <div class="message">
+                            <div class="increse">
+                                <div class="table">INCREASE </div>
+                                <div class="sub">899</div>
+                                <div class="table"> VIEWS</div>
+                            </div>
+                            <div class="lastweek table">
+                                last week: 44,937
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <hr>
+                <div class="google">
+                    <i class="googleicon fa-brands fa-google"></i>
+                    <div class="googletext sub2">Google.com</div>
+                    <div class="googleamount sub">23,582</div>
+                    <div class="arrowgreen"><i class="fa-solid fa-arrow-up"></i></div>
+                    <div class="percentagegreen sub">12%
+                        <div class="message">
+                            <div class="increse">
+                                <div class="table">INCREASE </div>
+                                <div class="sub">899</div>
+                                <div class="table"> VIEWS</div>
+                            </div>
+                            <div class="lastweek table">
+                                last week: 44,937
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="shopify">
+                    <i class="shopifyicon fa-brands fa-shopify"></i>
+                    <div class="shopifytext sub2">Shopify.com</div>
+                    <div class="shopifyamount sub">2,489</div>
+                    <div class="arrowred"><i class="fa-solid fa-arrow-down"></i></div>
+                    <div class="percentagered sub">15%
+                        <div class="message">
+                            <div class="increse">
+                                <div class="table">INCREASE </div>
+                                <div class="sub">899</div>
+                                <div class="table"> VIEWS</div>
+                            </div>
+                            <div class="lastweek table">
+                                last week: 44,937
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="wordpress">
+                    <i class="wordpressicon fa-brands fa-wordpress"></i>
+                    <div class="wordpresstext sub2">Wordpress.com</div>
+                    <div class="wordpressamount sub">1,057</div>
+                    <div class="arrowred"><i class="fa-solid fa-arrow-down"></i></div>
+                    <div class="percentagered sub">30%
+                        <div class="message">
+                            <div class="increse">
+                                <div class="table">INCREASE </div>
+                                <div class="sub">899</div>
+                                <div class="table"> VIEWS</div>
+                            </div>
+                            <div class="lastweek table">
+                                last week: 44,937
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="latestorders title">
+                Latest Orders
+                <div class="vintage">
+                    <div class="vintageimgbox">
+                        <div class="vintageimg">
+                            <img src="./img/Vintage T-shirt.jpg" alt="" class="latestimg">
+                        </div>
+                    </div>
+                    <div class="latest">
+                        <div class="latesttext sub">Vintage T-shirt</div>
+                        <div class="latesttime sub2">
+                            <i class="fa-solid fa-clock"></i>
+                            2018/6/13  13:42
+                        </div>
+                        <div class="latestperson sub2">
+                            <i class="fa-solid fa-person"></i>
+                            Belle Willis
+                        </div>
+                    </div>
+                    <div class="latesttotal table">
+                        Total
+                        <div class="latestamount sub">
+                            3,200
+                        </div>
+                    </div>
+                    
+                </div>
+                <hr>
+                <div class="cowboy">
+                    <div class="cowboyimgbox">
+                        <div class="cowboyimg">
+                            <img src="./img/Cowboy Jacket.jpg" alt="" class="latestimg">
+                        </div>
+                    </div>
+                    <div class="latest">
+                        <div class="latesttext sub">Cowboy Jacket</div>
+                        <div class="latesttime sub2">
+                            <i class="fa-solid fa-clock"></i>
+                            2018/6/13  10:45
+                        </div>
+                        <div class="latestperson sub2">
+                            <i class="fa-solid fa-person"></i>
+                            Adrian Cummings
+                        </div>
+                        
+                    </div>
+                    <div class="latesttotal table">
+                        Total
+                        <div class="latestamount sub">
+                            3,200
+                        </div>
+                    </div>
+                    
+                </div>
+                <hr>
+                <div class="coach">
+                    <div class="coachimgbox">
+                        <div class="coachimg">
+                            <img src="./img/Coach Coat.jpg" alt="" class="latestimg">
+                        </div>
+                    </div>
+                    <div class="latest">
+                        <div class="latesttext sub">Coach Coat</div>
+                        <div class="latesttime sub2">
+                            <i class="fa-solid fa-clock"></i>
+                            2018/6/13  8:26
+                        </div>
+                        <div class="latestperson sub2">
+                            <i class="fa-solid fa-person"></i>
+                            Lura Holland
+                        </div>
+                        
+                    </div>
+                    <div class="latesttotal table">
+                        Total
+                        <div class="latestamount sub">
+                            3,200
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+        
+
+
+
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="./js/home.js"> </script>
+
+    <script src="https://kit.fontawesome.com/b7942be068.js" crossorigin="anonymous"></script>
+    
+
+
+   
+</body>
+
+
+</html>

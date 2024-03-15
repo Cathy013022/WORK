@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=1">
+    
+    <link rel="stylesheet" href="css/orders.css">
+    
+    <script src="https://kit.fontawesome.com/b7942be068.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+    <script src="./js/orders.js"> </script>
+
+
+   <title>Admin order</title>
+   <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header class="navbar u-cf">
+            <div class="shoptime title">Shoptime</div>
+            <ul class="menu sub2">
+                <li><a href="./home.html">HOME</a></li>
+                <li><a class="current" href="./orders.html">ORDERS</a></li>
+                <li><a href="./product.html">PRODUCT</a></li>
+            </ul>
+            <div class="admin sub2">ADMIN</div>
+        </header>
+    </div>
+
+
+    <div class="main">
+        <div x-data="datatables()">
+            <div class="mb-4 flex">
+                <div class="flex-1 pr-4">
+                    <label>
+                        <input type="checkbox" class="form-checkbox" @click="selectAllCheckbox($event);">
+                    </label>
+                </div>
+                <div>
+                    <div class="flex">
+                        <div class="editsection">
+                            
+                            <button @click.prevent="open = !open" class="edit">
+                                <span class="sub2">EDIT SECTION</span>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </button>
+
+                            <div x-show="open" @click.away="open = false"
+                                class="editin tableinf">
+                                <template x-for="heading in headings">
+                                    <label>
+                                        <input type="checkbox" class="form-checkbox" checked @click="toggleColumn(heading.key)">
+                                    
+                                        <div class="editchecks tableinf" x-text="heading.value"></div>
+                                    </label>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="overflow">
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                
+                            </th>
+                            <template x-for="heading in headings">
+                                <th class="sub2 border-b  px-6 py-2 tracking-wider uppercase text-xs"
+                                    x-text="heading.value" :x-ref="heading.key" :class="{ [heading.key]: true }">
+                                </th>
+                            </template>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template  x-for="user in users" :key="user.customer">
+                            <tr>
+                                <td class="checktd">
+                                    <label>
+                                        <input type="checkbox" class="form-checkbox rowCheckbox " :name="user.userId"
+                                                @click="getRowDetail($event, user.customer)">
+                                    </label>
+                                </td>
+                                <td  class="orderID tableinf">
+                                    <span x-text="user.orderID" ></span>
+                                </td>
+                                <td class="customer tableinf">
+                                    <span x-text="user.customer"></span>
+                                </td>
+                                <td class="productList tableinf">
+                                    <span x-text="user.productList"></span>
+                                </td>
+                                <td class="quantity tableinf">
+                                    <span x-text="user.quantity"></span>
+                                </td>
+                                <td class="total tableinf">
+                                    <span x-text="user.total"></span>
+                                </td>
+                                <td class="addtocart tableinf">
+                                    <span x-text="user.addtocart"></span>
+                                </td>
+                                <td class="checkout tableinf">
+                                    <span x-text="user.checkout"></span>
+                                </td>
+                                <td class="address tableinf">
+                                    <span x-text="user.address"></span>
+                                </td>
+                                <td class="phone tableinf">
+                                    <span x-text="user.phone"></span>
+                                </td>
+                                <td class="emaill tableinf">
+                                    <span x-text="user.emaill"></span>
+                                </td>
+                                <td class="status tableinf">
+                                    <span x-text="user.status"></span>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        
+    </div>
+    
+
+
+    
+
+   
+</body>
+
+
+
+</html>

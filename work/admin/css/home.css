@@ -1,0 +1,389 @@
+*{
+    position: relative;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background-color: #f2f2f2;
+    
+    
+}
+
+a{
+    text-decoration: none;
+    color: #C8C8C8;
+}
+.u-cf::after{
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+/* 字體設定 */
+
+@font-face {
+    font-family: 'Helvetica Neue Bold';
+    src: url('../fonts/HelveticaNeueBold.otf') format("woff"),
+            /* url('../fonts/HelveticaNeueBold.ttf') format("truetype"),
+            url('../fonts/HelveticaNeueBold.eot') format("embedded-opentype"); */
+}
+.title{
+    font-size: 24px;
+    font-family: "Helvetica Neue Bold"; 
+}
+.sub{
+    font-size: 20px;
+    font-family: "Helvetica"; 
+    font-weight: bold;    
+}
+.sub2{
+    font-size: 16px;
+    font-family: "Helvetica";
+    font-weight: bold;
+}
+.table{
+    font-size: 14px;
+    font-family: "Helvetica";
+}
+
+/* navbar */
+
+.wrapper{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    
+   
+}
+.navbar{
+    background-color: #000000;
+    margin: 0;
+}
+
+.shoptime{
+    color: #ffffff;
+    float: left;
+    
+    width: 20%;
+    text-align: center;
+    margin: 15px;
+    margin-left: -1px;
+
+}
+.menu{
+    float: left;
+    font-size: 18px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translatey(-50%);
+    
+
+    
+}
+.menu li{
+    display: inline-block;
+    margin-right: 30px;
+    
+}
+
+.menu a{
+    text-align: center;
+    display: block;
+    padding: 17px;
+    
+    
+}
+.menu a::after{
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    background-color: #ffffff;
+    bottom: 3px;
+    bottom: 0;
+    left: 50%;
+    transform: translatex(-50%);
+    transition: all 0.3s;
+}
+.menu li:hover a::after{
+    width: 100px;
+}
+.menu li .current::after{
+    width: 100px;
+}
+
+.menu li .current{
+    color: #fff;
+}
+
+.admin{
+    color: #ffffff;
+    float: right;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    right: 7%;
+    transform: translatey(-50%);
+    
+}
+
+/* overview */
+
+.main{
+    margin: 50px;
+    margin-top: 30px;
+    padding: 50px;
+    padding-bottom: 10px;
+    
+}
+
+.overviewcol{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    
+}
+.overviewcol i{
+    font-size: 20px;
+    margin-right: 5px;
+}
+.revenue,.cost,.income{
+    width: 25vw;
+    height: 150px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0px 0px 9px #E1E1E1;
+    
+    
+}
+.totalrevenue,.totalcost,.netincome{
+    
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.revenueamount,.costamount,.incomeamount{
+    display: inline-block;
+    font-size: 32px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: "Helvetica Neue Bold";
+}
+.revenueamount{
+    color: #7ED321; 
+}
+.costamount{
+    color: #D0021B; 
+}
+.incomeamount{
+    color: #4A90E2; 
+}
+
+
+
+ /* activity */
+.activity{
+    margin-top: 30px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0px 0px 9px #E1E1E1;
+    height: 500px;
+    padding: 20px;
+}
+
+.chart{
+    height: 100%;
+}
+#myChart{
+    padding: 20px;
+}
+/* transaction */
+.transaction{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.transactionwebsite,.latestorders{
+    display: inline-block;
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0px 0px 9px #E1E1E1;
+    height: 400px;
+    padding: 40px;
+    
+}
+.transactionwebsite{
+    width: 48%;
+    padding-bottom: 20px;
+}
+.latestorders{
+    float: right;
+    width: 48%;
+}
+
+.fb,.google,.shopify,.wordpress{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.fbicon,.googleicon,.shopifyicon,.wordpressicon{
+    font-size: 50px;
+}
+.fbtext,.googletext,.shopifytext,.wordpresstext{
+    color: #c8c8c8;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translatey(-50%);
+}
+.fbamount,.googleamount,.shopifyamount,.wordpressamount{
+    
+    float: right;
+    
+    position: absolute;
+    top: 50%;
+    right: 30%;
+    transform: translatey(-50%);
+    
+}
+.arrowgreen{
+    color: #7ED321;
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    transform: translatey(-50%);
+}
+.arrowred{
+    color: #D0021B;
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    transform: translatey(-50%);
+}
+.percentagegreen{
+    color: #7ED321;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translatey(-50%);
+}
+.percentagered{
+    color: #D0021B;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translatey(-50%);
+}
+hr{
+    height: 1px;
+    background-color: #E1E1E1;
+    border: none;
+}
+.message{
+    display: none;
+    background-color: #000000;
+    width: 500%;
+    height: 300%;
+    position: absolute;
+    top: -350%;
+    right: -170%;
+    border-radius: 3px;
+    
+}
+.message::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border: 8px solid;
+    border-color: #000000 transparent  transparent  transparent;
+    position: absolute;
+    top: 100%;
+    right: 45%;
+}
+.percentagegreen:hover .message,.percentagered:hover .message{
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.increse,.lastweek{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.message .table{
+    color: #ffffff;
+    
+}
+
+
+ /* latestorders */
+.vintageimgbox,.cowboyimgbox,.coachimgbox{
+    width: 14%;
+    height: 14%;
+    overflow: hidden;
+    display: block;
+    margin-top: 20px;
+}
+.vintageimg,.cowboyimg,.coachimg{
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    height: 0;
+}
+.latestimg{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.latest{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translatey(-50%);
+}
+.latest i{
+    margin-right: 5px;
+}
+.latesttext,.latesttime{
+    margin-bottom: 8px;
+}
+.latesttime,.latestperson{
+    color: #c8c8c8;
+}
+.latestperson i{
+    font-size: 25px;
+}
+
+.latesttotal{
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translatey(-50%);
+}
+
+.latestamount{
+    position: absolute;
+    top: 150%;
+    right: 0;
+}
+
